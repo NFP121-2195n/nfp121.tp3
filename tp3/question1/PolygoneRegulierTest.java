@@ -25,4 +25,19 @@ public class PolygoneRegulierTest extends junit.framework.TestCase {
         assertTrue(p3.equals(p1));
         assertEquals(p1.hashCode(), p3.hashCode());
     }
+
+    public void test_methodes()
+    {
+        assertEquals(400, p1.perimetre());
+        assertEquals(500, p2.perimetre());
+        assertEquals(400, p3.perimetre());
+        
+        assertEquals(10000, p1.surface());
+        assertEquals(17204, p2.surface());
+        assertEquals(10000, p3.surface());
+        assertEquals("<4,100>", p1.toString());
+        assertEquals("<5,100>", p2.toString());
+        assertEquals("<4,100>", p3.toString());
+    }
 }
+

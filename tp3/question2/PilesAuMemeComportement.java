@@ -172,5 +172,125 @@ public class PilesAuMemeComportement extends junit.framework.TestCase {
         assertEquals(" différence  sur la taille() ?? ",p3.taille(), p4.taille());
 
     }
+    
+    
+
+    public void test_piles_egaux() throws Exception
+    {
+        p4.empiler("a");
+        p3.empiler("a");
+        p2.empiler("a");
+        p1.empiler("a");
+
+        assertEquals("p1.capacité() == p2.capacité() ??",p1.capacite(), p2.capacite());
+        assertEquals("p2.capacite() == p3.capacite() ??",p2.capacite(), p3.capacite());
+        assertEquals("p3.capacite() == p4.capacite() ??",p3.capacite(), p4.capacite());
+
+        assertEquals("[a]", p1.toString());
+        assertEquals("p1.toString() != p2.toString() ?? ", p1.toString(), p2.toString());
+        assertEquals("p2.toString()!= p3.toString() ?? ",p2.toString(), p3.toString());
+        assertEquals("p3.toString()!= p4.toString() ?? ", p3.toString(), p4.toString());
+
+        assertEquals("p1.sommet() != p2.sommet() ??? ", p1.sommet(), p2.sommet());
+        assertEquals("p2.sommet() != p3.sommet() ??? ", p2.sommet(), p3.sommet());
+        assertEquals("p1.estVide() != p2.estVide() ??? ",p1.estVide(), p2.estVide());
+        assertEquals("p2.estVide()!= p3.estVide() ??? ", p2.estVide(), p3.estVide());
+        assertEquals("p1.estPleine() != p2.estPleine() ??? ",p1.estPleine(), p2.estPleine());
+        assertEquals("p2.estPleine()!=  p3.estPleine() ??? ",p2.estPleine(), p3.estPleine());
+
+        String s = (String) p1.depiler();
+        assertEquals(" différence après avoir dépilé ?? ", s, (String) p2.depiler());
+        assertEquals(" différence après avoir dépilé ?? ",s, (String) p3.depiler());
+        assertEquals(" différence après avoir dépilé ?? ",s, (String) p4.depiler());
+
+        assertEquals("p1.estVide() != p2.estVide() ??? ",p1.estVide(), p2.estVide());
+        assertEquals("p2.estVide()!= p3.estVide() ??? ", p2.estVide(), p3.estVide());
+        assertEquals("p1.estPleine() != p2.estPleine() ??? ",p1.estPleine(), p2.estPleine());
+        assertEquals("p2.estPleine()!=  p3.estPleine() ??? ",p2.estPleine(), p3.estPleine());
+
+        assertEquals(" différence sur la taille() ?? ",p1.taille(), p2.taille());
+        assertEquals(" différence sur la taille() ?? ",p2.taille(), p3.taille());
+        assertEquals(" différence sur la taille() ?? ",p3.taille(), p4.taille());
+
+        p4.empiler("ab");
+        p3.empiler("ab");
+        p2.empiler("ab");
+        p1.empiler("ab");
+
+        assertEquals("p1.sommet() != p2.sommet() ??? ", p1.sommet(), p2.sommet());
+        assertEquals("p2.sommet() != p3.sommet() ??? ", p2.sommet(), p3.sommet());
+        assertEquals("p1.estVide() != p2.estVide() ??? ",p1.estVide(), p2.estVide());
+        assertEquals("p2.estVide()!= p3.estVide() ??? ", p2.estVide(), p3.estVide());
+        assertEquals("p1.estPleine() != p2.estPleine() ??? ",p1.estPleine(), p2.estPleine());
+        assertEquals("p2.estPleine()!=  p3.estPleine() ??? ",p2.estPleine(), p3.estPleine());
+        assertEquals(" différence sur la taille() ?? ",p1.taille(), p2.taille());
+        assertEquals(" différence sur la taille() ?? ",p2.taille(), p3.taille());
+        assertEquals(" différence  sur la taille() ?? ",p3.taille(), p4.taille());
+
+        p4.empiler("abc");
+        p3.empiler("abc");
+        p2.empiler("abc");
+        p1.empiler("abc");
+
+        assertEquals("p1.toString() != p2.toString() ?? ", p1.toString(), p2.toString());
+        assertEquals("p2.toString() != p3.toString() ?? ",p2.toString(), p3.toString());
+        assertEquals("p3.toString() != p4.toString() ?? ", p3.toString(), p4.toString());
+
+        assertEquals("p1.sommet() != p2.sommet() ??? ", p1.sommet(), p2.sommet());
+        assertEquals("p2.sommet() != p3.sommet() ??? ", p2.sommet(), p3.sommet());
+
+        assertEquals("p1.estVide() != p2.estVide() ??? ",p1.estVide(), p2.estVide());
+        assertEquals("p2.estVide()!= p3.estVide() ??? ", p2.estVide(), p3.estVide());
+        assertEquals("p1.estPleine() != p2.estPleine() ??? ",p1.estPleine(), p2.estPleine());
+        assertEquals("p2.estPleine()!=  p3.estPleine() ??? ",p2.estPleine(), p3.estPleine());
+
+        assertEquals(" différence sur la taille() ?? ",p1.taille(), p2.taille());
+        assertEquals(" différence sur la taille() ?? ",p2.taille(), p3.taille());
+        assertEquals(" différence  sur la taille() ?? ",p3.taille(), p4.taille());
+
+        p4.empiler("abcd");
+        p3.empiler("abcd");
+        p2.empiler("abcd");
+        p1.empiler("abcd");
+
+        assertEquals("p1.toString() != p2.toString() ?? ", p1.toString(), p2.toString());
+        assertEquals("p2.toString() != p3.toString() ?? ",p2.toString(), p3.toString());
+        assertEquals("p3.toString() != p4.toString() ?? ", p3.toString(), p4.toString());
+
+        assertEquals("p1.sommet() != p2.sommet() ??? ", p1.sommet(), p2.sommet());
+        assertEquals("p2.sommet() != p3.sommet() ??? ", p2.sommet(), p3.sommet());
+
+        assertEquals("p1.estVide() != p2.estVide() ??? ",p1.estVide(), p2.estVide());
+        assertEquals("p2.estVide()!= p3.estVide() ??? ", p2.estVide(), p3.estVide());
+        assertEquals("p1.estPleine() != p2.estPleine() ??? ",p1.estPleine(), p2.estPleine());
+        assertEquals("p2.estPleine()!=  p3.estPleine() ??? ",p2.estPleine(), p3.estPleine());
+
+        assertEquals(" différence sur la taille() ?? ",p1.taille(), p2.taille());
+        assertEquals(" différence sur la taille() ?? ",p2.taille(), p3.taille());
+        assertEquals(" différence  sur la taille() ?? ",p3.taille(), p4.taille());
+
+        p4.depiler();
+        p3.depiler();
+        p2.depiler();
+        p1.depiler();
+
+        assertEquals("p1.toString() != p2.toString() ?? ", p1.toString(), p2.toString());
+        assertEquals("p2.toString() != p3.toString() ?? ",p2.toString(), p3.toString());
+        assertEquals("p3.toString() != p4.toString() ?? ", p3.toString(), p4.toString());
+
+        assertEquals("p1.sommet() != p2.sommet() ??? ", p1.sommet(), p2.sommet());
+        assertEquals("p2.sommet() != p3.sommet() ??? ", p2.sommet(), p3.sommet());
+
+        assertEquals("p1.estVide() != p2.estVide() ??? ",p1.estVide(), p2.estVide());
+        assertEquals("p2.estVide()!= p3.estVide() ??? ", p2.estVide(), p3.estVide());
+        assertEquals("p1.estPleine() != p2.estPleine() ??? ",p1.estPleine(), p2.estPleine());
+        assertEquals("p2.estPleine()!=  p3.estPleine() ??? ",p2.estPleine(), p3.estPleine());
+
+        assertEquals(" différence sur la taille() ?? ",p1.taille(), p2.taille());
+        assertEquals(" différence sur la taille() ?? ",p2.taille(), p3.taille());
+        assertEquals(" différence  sur la taille() ?? ",p3.taille(), p4.taille());
+
+    }
 }
+
 

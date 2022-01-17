@@ -10,6 +10,8 @@ public class IHMPile extends JFrame implements ActionListener{
     private JLabel     contenu = new JLabel("[]");
 
     private Pile p;
+    private PolygoneRegulier polyReg;
+    private int nombreDeCotes, longueurDuCote;
 
     public IHMPile(){
         super("IHM Pile");
@@ -36,17 +38,31 @@ public class IHMPile extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent ae){
         if(ae.getActionCommand().equals("empiler")){
-
-            // à compléter
-
-            // en cas d'exception
-            //contenu.setText( /* à compléter */"" + " estPleine !");
-
+            try
+            {
+                nombreDeCotes = Integer.parseInt(donnee.getText());
+                longueurDuCote = Integer.parseInt(sommet.getText());
+                polyReg = new PolygoneRegulier(nombreDeCotes, longueurDuCote);
+                p.empiler(polyReg);
+                contenu.setText(p.toString());
+            }
+            catch(NumberFormatException e){
+                contenu.setText("erreur: "+ e.getMessage());
+            }
+            catch (question1.PilePleineException ppe)
+            {
+                contenu.setText("la pile est Pleine !"+ ppe.getMessage());
+            }
         }else{
-
-            // à compléter
-            // en cas d'exception
-            //contenu.setText( /* à compléter */"" + " estVide !");
+            try
+            {
+                p.depiler();
+                contenu.setText(p.toString());
+            }
+            catch (question1.PileVideException pve)
+            {
+                contenu.setText("la pile est Vide !" + pve.getMessage());
+            }
         }
     }
 
